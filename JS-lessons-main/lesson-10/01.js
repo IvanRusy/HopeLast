@@ -60,9 +60,11 @@ const view = {
     const deleteButton = document.querySelector(".list")
     deleteButton.addEventListener("click", function (event) {
       const targetElement = event.target
-            if (targetElement.classList.contains('delete-button')) {
+      // 1. проверяем, что клик был по кнопке удаления
+      if (targetElement.classList.contains('delete-button')) {
         const movieId = +targetElement.parentElement.id
-               controller.deleteMovie(movieId)
+        // 2. вызываем метод контроллера для удаления задачи
+        controller.deleteMovie(movieId)
       }
     })
 
